@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -Is http://169.254.169.254/latest/meta-data/spot/termination-time | head -1 | grep -v 404 && ./shutdown && shutdown now
