@@ -1,0 +1,3 @@
+#!/bin/bash
+aws s3 sync --storage-class STANDARD_IA /opt/factorio/saves/ s3://doushio-factorio/saves
+
