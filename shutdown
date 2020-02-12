@@ -1,4 +1,4 @@
 #!/bin/bash
 /opt/factorio-init/factorio stop
-aws s3 cp --recursive --storage-class STANDARD_IA /opt/factorio/saves/ s3://doushio-factorio/saves
+aws s3 sync --storage-class STANDARD_IA /opt/factorio/saves/ s3://doushio-factorio/saves
 
