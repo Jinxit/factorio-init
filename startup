@@ -1,0 +1,4 @@
+#!/bin/bash
+aws s3 cp --recursive s3://doushio-factorio/saves /opt/factorio/saves/
+/opt/factorio-init/factorio start
+
