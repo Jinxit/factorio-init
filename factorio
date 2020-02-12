@@ -564,7 +564,7 @@ case "$1" in
   stop)
     # Stops the server
     if is_running; then
-      send_cmd "Server is being shut down on request"
+      #send_cmd "Server is being shut down on request"
       if ! stop_service; then
         echo "Could not stop $SERVICE_NAME"
         exit 1
