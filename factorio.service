@@ -2,6 +2,7 @@
 Description=Factorio Server
 Wants=network-online.target
 After=network.target network-online.target
+Requires=network.target network-online.target
 
 [Service]
 User=root
