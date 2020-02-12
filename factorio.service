@@ -1,8 +1,8 @@
 [Unit]
 Description=Factorio Server
 Wants=network-online.target
-After=network.target network-online.target
-Requires=network.target network-online.target
+After=network.target network-online.target multi-user.target
+Requires=network.target network-online.target multi-user.target
 
 [Service]
 User=root
@@ -13,9 +13,9 @@ Group=root
 PIDFile=/opt/factorio/server.pid
 
 Type=forking
-TimeoutStartSec=30
+TimeoutStartSec=60
 ExecStart=/opt/factorio-init/update-and-start
-TimeoutStopSec=30
+TimeoutStopSec=60
 ExecStop=/opt/factorio-init/shutdown
 RestartSec=30
 Restart=on-failure
