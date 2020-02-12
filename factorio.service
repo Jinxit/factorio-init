@@ -4,19 +4,19 @@ Wants=network-online.target
 After=network.target network-online.target
 
 [Service]
-User=factorio
-Group=factorio
+User=root
+Group=root
 
 # We will store a pid file in your ${WRITE_DIR}/server.pid
 # Adjust if you change the write dir of your server
 PIDFile=/opt/factorio/server.pid
 
 Type=forking
-TimeoutStartSec=20
+TimeoutStartSec=30
 ExecStart=/opt/factorio-init/self-update && /opt/factorio-init/startup
-TimeoutStopSec=20
+TimeoutStopSec=30
 ExecStop=/opt/factorio-init/shutdown
-RestartSec=20
+RestartSec=30
 Restart=on-failure
 
 [Install]
