@@ -1,5 +1,7 @@
 #!/bin/bash
+cd /opt/factorio-init
 git fetch --all
 git reset --hard origin/master
 git pull
-
+cp factorio.service /etc/systemd/system/factorio.service
+systemctl daemon-reload

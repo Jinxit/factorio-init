@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Running startup script"
 aws s3 sync s3://doushio-factorio/saves /opt/factorio/saves/
 /opt/factorio-init/factorio start
 
