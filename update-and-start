@@ -1,0 +1,3 @@
+#!/bin/bash
+/opt/factorio-init/self-update
+/opt/factorio-init/startup
