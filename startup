@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "Running startup script"
+PUBLIC_IP=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+aws route53 change-resource-record-sets --hosted-zone-id Z3QRD20ASE2MYI --change-batch '{"Changes":[{"Action":"UPSERT","ResourceRecordSet":{"Name":"factorio.doush.io","ResourceRecords":[{"Value":"'"$PUBLIC_IP"'"}],"TTL":60,"Type":"A"}}]}'
 aws s3 sync s3://doushio-factorio/saves /opt/factorio/saves/
 /opt/factorio-init/factorio start
 
