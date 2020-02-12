@@ -13,7 +13,7 @@ PIDFile=/opt/factorio/server.pid
 
 Type=forking
 TimeoutStartSec=30
-ExecStart=/opt/factorio-init/self-update && /opt/factorio-init/startup
+ExecStart=/opt/factorio-init/update-and-start
 TimeoutStopSec=30
 ExecStop=/opt/factorio-init/shutdown
 RestartSec=30
