@@ -188,7 +188,7 @@ wait_pingpong() {
 
 start_service() {
   if [ -e ${PIDFILE} ]; then
-    ps -p $(cat ${PIDFILE}) > /dev/null 2>&1
+    ps | grep $(cat ${PIDFILE}) > /dev/null 2>&1
     if [ "$?" -eq "0" ]; then
       echo "${SERVICE_NAME} is already running!"
       return 1
@@ -219,7 +219,7 @@ start_service() {
 
   as_user "tail -f ${FIFO} |${INVOCATION} ${EXE_ARGS_GLIBC}>> ${CMDOUT} 2>&1 & echo \$! > ${PIDFILE}"
 
-  ps -p $(cat ${PIDFILE}) > /dev/null 2>&1
+  ps | grep $(cat ${PIDFILE}) > /dev/null 2>&1
   if [ "$?" -ne "0" ]; then
     echo "Unable to start ${SERVICE_NAME}"
     return 1
