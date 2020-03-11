@@ -76,5 +76,5 @@ UPDATE_TMPDIR=/tmp
 
 # Extras
 # Additional binary arguments, these will be sent to the binary when issuing the "start" command
-EXTRA_BINARGS=""
+#EXTRA_BINARGS=""
 
